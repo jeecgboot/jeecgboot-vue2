@@ -1,7 +1,7 @@
 Ant Design Jeecg Vue
 ====
 
-当前最新版本： 3.3.0（发布日期：20220725）
+当前最新版本： 3.4.0（发布日期：20220725）
 
 Overview
 ----
@@ -10,6 +10,25 @@ Overview
 Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码生成器的低代码平台。
 前端页面代码和后端功能代码一键生成，不需要写任何代码，保持jeecg一贯的强大！！
 
+
+ 
+> 强大的代码生成器让前后端代码一键生成! JeecgBoot引领低代码开发模式(OnlineCoding-> 代码生成-> 手工MERGE)， 帮助解决Java项目70%的重复工作，让开发更多关注业务。既能快速提高效率，节省成本，同时又不失灵活性
+
+##  项目源码
+
+| 仓库 |前端源码Vue3版 | 前端源码Vue2版 | 后端源码 |
+|-|-|-|-|
+| Github | [jeecgboot-vue3](https://github.com/jeecgboot/jeecgboot-vue3)  | [ant-design-vue-jeecg](https://github.com/jeecgboot/ant-design-vue-jeecg) | [jeecg-boot](https://github.com/jeecgboot/jeecg-boot) |
+| 码云 | [jeecgboot-vue3](https://gitee.com/jeecg/jeecgboot-vue3)  | [ant-design-vue-jeecg](https://gitee.com/jeecg/ant-design-vue-jeecg)  | [jeecg-boot](https://gitee.com/jeecg/jeecg-boot) |
+
+
+##### 项目说明
+
+| 项目名                | 说明                     | 
+|--------------------|------------------------|
+| `jeecgboot-vue3` | Vue3版前端代码 | 
+| `jeecg-boot`    | JAVA后台（支持微服务）        | 
+| `ant-design-vue-jeecg`  |Vue2版前端代码   |   
 
 
 #### 前端技术
