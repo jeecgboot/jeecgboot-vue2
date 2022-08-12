@@ -46,6 +46,22 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 
 
 
+
+#### vue2技术栈
+ 
+ > 此处是Vue2的技术栈介绍，[Vue3版技术栈看这里](https://github.com/jeecgboot/jeecgboot-vue3)
+
+- [Vue 2.6.10](https://cn.vuejs.org/),[Vuex](https://vuex.vuejs.org/zh/),[Vue Router](https://router.vuejs.org/zh/)
+- [Axios](https://github.com/axios/axios)
+- [ant-design-vue](https://vuecomponent.github.io/ant-design-vue/docs/vue/introduce-cn/)
+- [webpack](https://www.webpackjs.com/),[yarn](https://yarnpkg.com/zh-Hans/)
+- [vue-cropper](https://github.com/xyxiao001/vue-cropper) - 头像裁剪组件
+- [@antv/g2](https://antv.alipay.com/zh-cn/index.html) - Alipay AntV 数据可视化图表
+- [Viser-vue](https://viserjs.github.io/docs.html#/viser/guide/installation)  - antv/g2 封装实现
+- eslint，[@vue/cli 3.2.1](https://cli.vuejs.org/zh/guide)
+- vue-print-nb-jeecg - 打印
+
+
 项目下载和运行
 ----
 
