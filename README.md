@@ -31,6 +31,13 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 | `ant-design-vue-jeecg`  |Vue2版前端代码   |   
 
 
+
+#### 技术支持
+
+本项目关闭issue，使用中遇到问题或者BUG可以在 [JeecgBoot主项目上提Issues](https://github.com/jeecgboot/jeecg-boot/issues/new)
+
+官方支持： http://jeecg.com/doc/help
+
 #### 前端技术
  
 - 基础框架：[ant-design-vue](https://github.com/vueComponent/ant-design-vue) - Ant Design Of Vue 实现
