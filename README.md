@@ -41,41 +41,33 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 
 
 
-#### 技术支持
+
+#### 前端技术栈
+ 
+  > 此处是Vue2版的技术栈介绍，[Vue3版技术栈看这里](https://github.com/jeecgboot/jeecgboot-vue3)
+
+- 基础框架：[ant-design-vue](https://github.com/vueComponent/ant-design-vue) - Ant Design Of Vue 实现
+- JavaScript框架：Vue
+- node
+- yarn
+- @vue/cli 3.2.1
+- [vue-cropper](https://github.com/xyxiao001/vue-cropper) - 头像裁剪组件
+- [@antv/g2](https://antv.alipay.com/zh-cn/index.html) - Alipay AntV 数据可视化图表
+- [Viser-vue](https://viserjs.github.io/docs.html#/viser/guide/installation)  - antv/g2 封装实现
+- [Vue 2.6.10](https://cn.vuejs.org/),[Vuex](https://vuex.vuejs.org/zh/),[Vue Router](https://router.vuejs.org/zh/)
+- [Axios](https://github.com/axios/axios)
+- [webpack](https://www.webpackjs.com/),[yarn](https://yarnpkg.com/zh-Hans/)
+- eslint，[@vue/cli 3.2.1](https://cli.vuejs.org/zh/guide)
+- vue-print-nb-jeecg - 打印
+
+
+技术支持
+----
 
 本项目关闭issue，使用中遇到问题或者BUG可以在 [JeecgBoot主项目上提Issues](https://github.com/jeecgboot/jeecg-boot/issues/new)
 
 官方支持： http://jeecg.com/doc/help
 
-#### 前端技术
- 
-- 基础框架：[ant-design-vue](https://github.com/vueComponent/ant-design-vue) - Ant Design Of Vue 实现
-- JavaScript框架：Vue
-- Webpack
-- node
-- yarn
-- eslint
-- @vue/cli 3.2.1
-- [vue-cropper](https://github.com/xyxiao001/vue-cropper) - 头像裁剪组件
-- [@antv/g2](https://antv.alipay.com/zh-cn/index.html) - Alipay AntV 数据可视化图表
-- [Viser-vue](https://viserjs.github.io/docs.html#/viser/guide/installation)  - antv/g2 封装实现
-
-
-
-
-#### vue2技术栈
- 
- > 此处是Vue2的技术栈介绍，[Vue3版技术栈看这里](https://github.com/jeecgboot/jeecgboot-vue3)
-
-- [Vue 2.6.10](https://cn.vuejs.org/),[Vuex](https://vuex.vuejs.org/zh/),[Vue Router](https://router.vuejs.org/zh/)
-- [Axios](https://github.com/axios/axios)
-- [ant-design-vue](https://vuecomponent.github.io/ant-design-vue/docs/vue/introduce-cn/)
-- [webpack](https://www.webpackjs.com/),[yarn](https://yarnpkg.com/zh-Hans/)
-- [vue-cropper](https://github.com/xyxiao001/vue-cropper) - 头像裁剪组件
-- [@antv/g2](https://antv.alipay.com/zh-cn/index.html) - Alipay AntV 数据可视化图表
-- [Viser-vue](https://viserjs.github.io/docs.html#/viser/guide/installation)  - antv/g2 封装实现
-- eslint，[@vue/cli 3.2.1](https://cli.vuejs.org/zh/guide)
-- vue-print-nb-jeecg - 打印
 
 
 项目下载和运行
