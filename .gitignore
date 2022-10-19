@@ -1,3 +1,10 @@
+node_modules
+.DS_Store
+.github
+dist
+.npmrc
+.cache
+
 ## ide
 **/.idea
 *.iml
