@@ -134,6 +134,7 @@ const user = {
           });
           if (findVue3Menu) {
             console.error("启动失败: 检查到当前菜单表是Vue3版本，导致菜单加载异常，请切换到Vue2版菜单！参考：http://doc.jeecg.com/3075165")
+            Vue.prototype.$Jmessage.error('启动失败: 检查到当前菜单表是Vue3版本，导致菜单加载异常，请切换到Vue2版菜单！参考：http://doc.jeecg.com/3075165', 0)
           }
           // update-end----author:scott---date:20221018------for: 判断是否是 vue3 版本的菜单，给予提示 ---
           
