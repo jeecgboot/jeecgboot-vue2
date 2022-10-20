@@ -52,13 +52,16 @@ export const JVxeTableModelMixin = {
         rowNum = 1
         console.warn('由于你没有在 data 中定义 addDefaultRowNum 或 addDefaultRowNum 不是数字，所以默认添加一条空数据，如果不想默认添加空数据，请将定义 addDefaultRowNum 为 0')
       }
-      this.eachAllTable((item) => {
-        //update-begin-author:taoyan date:20210315 for: 一对多jvex 默认几行不好使了 LOWCOD-1349
-        setTimeout(()=>{
-          item.addRows()
-        }, 30)
-        //update-end-author:taoyan date:20210315 for: 一对多jvex 默认几行不好使了 LOWCOD-1349
-      })
+      if (rowNum > 0) {
+        let newRows = new Array(rowNum).fill({})
+        this.eachAllTable((item) => {
+          //update-begin-author:taoyan date:20210315 for: 一对多jvex 默认几行不好使了 LOWCOD-1349
+          setTimeout(()=>{
+            item.addRows(newRows)
+          }, 30)
+          //update-end-author:taoyan date:20210315 for: 一对多jvex 默认几行不好使了 LOWCOD-1349
+        })
+      }
       if (typeof this.addAfter === 'function') this.addAfter(this.model)
       this.edit(this.model)
     },
