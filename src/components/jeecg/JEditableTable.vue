@@ -117,8 +117,9 @@
               <!-- tr 只加载可见的和预加载的总共十条数据 -->
               <div
                 v-if="
-                rowIndex >= parseInt(`${(scrollTop-rowHeight) / rowHeight}`) &&
-                  (parseInt(`${scrollTop / rowHeight}`) + 9) > rowIndex
+                maxHeight == null ||
+                (rowIndex >= parseInt(`${(scrollTop-rowHeight) / rowHeight}`) &&
+                  (parseInt(`${scrollTop / rowHeight}`) + 9) > rowIndex)
               "
                 :id="`${caseId}tbody-tr-${rowIndex}`"
                 :data-idx="rowIndex"
