@@ -171,15 +171,18 @@ export default {
       toggleFullscreen() {
         this.innerFullscreen = !this.innerFullscreen
         triggerWindowResizeEvent()
-        // 全屏的时候禁止拖动
-        if (this.innerFullscreen) {
-          // 还原弹窗的位置为0,0
-          this.setModalPosition(0, 0, false)
-          this.dragSettings.headerEl.style.cursor = null
-        } else {
-          // 取消全屏的时候，将弹窗移动到上次记录的位置
-          this.resetModalPosition()
-          this.dragSettings.headerEl.style.cursor = 'move'
+        // 开启拖拽后的特殊处理
+        if (this.draggable) {
+          // 全屏的时候禁止拖动
+          if (this.innerFullscreen) {
+            // 还原弹窗的位置为0,0
+            this.setModalPosition(0, 0, false)
+            this.dragSettings.headerEl.style.cursor = null
+          } else {
+            // 取消全屏的时候，将弹窗移动到上次记录的位置
+            this.resetModalPosition()
+            this.dragSettings.headerEl.style.cursor = 'move'
+          }
         }
       },
 
