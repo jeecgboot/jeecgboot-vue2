@@ -90,7 +90,6 @@ const loadCategoryData = (params)=>getAction("/sys/category/loadAllData",params)
 const checkRuleByCode = (params) => getAction('/sys/checkRule/checkByCode', params)
 //加载我的通告信息
 const getUserNoticeInfo= (params)=>getAction("/sys/sysAnnouncementSend/getMyAnnouncementSend",params);
-//查询图表数据
 const getTransitURL = url => `/sys/common/transitRESTful?url=${encodeURIComponent(url)}`
 // 中转HTTP请求
 export const transitRESTful = {

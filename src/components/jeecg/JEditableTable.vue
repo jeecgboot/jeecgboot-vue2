@@ -837,6 +837,14 @@
         required: false,
         default: ''
       },
+      //删除前校验数据
+      beforeDelete:{
+        type: Function,
+        required: false,
+        default: ()=>{
+          return Promise.resolve(true);
+        }
+      }
     },
     data() {
       return {
@@ -1522,8 +1530,14 @@
       },
       /** 删除被选中的行 */
       removeSelectedRows() {
-        this.removeRows(this.selectedRowIds)
-        this.selectedRowIds = []
+        //update-begin-author:taoyan date:2022-8-5 for: VUEN-1767【bug】vue2 未控制住
+        this.beforeDelete().then(()=>{
+          this.removeRows(this.selectedRowIds)
+          this.selectedRowIds = []
+        }).catch(e=>{
+          this.$message.error(e);
+        });
+        //update-end-author:taoyan date:2022-8-5 for: VUEN-1767【bug】vue2 未控制住
       },
       /** 删除一行或多行 */
       removeRows(id) {
