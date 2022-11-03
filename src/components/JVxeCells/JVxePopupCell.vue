@@ -51,6 +51,10 @@
     enhanced: {
       aopEvents: {
         editActived(event) {
+          // 【issues/3854】附表控件类型为popup必填时未选择值提交表单会报错
+          if (event.$event && event.$event.type === 'valid-error') {
+            return;
+          }
           dispatchEvent.call(this, event, 'ant-input')
         },
       },
