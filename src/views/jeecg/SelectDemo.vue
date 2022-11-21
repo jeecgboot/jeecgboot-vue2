@@ -56,6 +56,16 @@
           </a-col>
           <a-col :span="12">选中值：{{ formData.searchValue}}</a-col>
         </a-row>
+        <!--  字典搜索多选 -->
+        <a-row :gutter="24">
+          <a-col :span="12">
+            <a-form-model-item label="字典搜索多选(同步)" prop="searchMultipleValue">
+              <j-search-select-tag placeholder="请做出你的选择" v-model="formData.searchMultipleValue" :dictOptions="searchOptions" mode="multiple">
+              </j-search-select-tag>
+            </a-form-model-item>
+          </a-col>
+          <a-col :span="12">选中值：{{ formData.searchMultipleValue}}</a-col>
+        </a-row>
 
         <!--  字典搜索 异步加载 -->
         <a-row :gutter="24">
@@ -71,6 +81,22 @@
             </a-form-model-item>
           </a-col>
           <a-col :span="12">选中值：{{ formData.asyncSelectValue}}</a-col>
+        </a-row>
+        <!--  字典搜索多选 异步加载 -->
+        <a-row :gutter="24">
+          <a-col :span="12">
+            <a-form-model-item label="字典搜索多选(异步)" prop="asyncMultipleValue">
+              <j-search-select-tag
+                  placeholder="请做出你的选择"
+                  v-model="formData.asyncMultipleValue"
+                  dict="sys_depart,depart_name,id"
+                  :pageSize="6"
+                  :async="true"
+                  mode="multiple">
+              </j-search-select-tag>
+            </a-form-model-item>
+          </a-col>
+          <a-col :span="12">选中值：{{ formData.asyncMultipleValue}}</a-col>
         </a-row>
 
         <!--  JMultiSelectTag -->

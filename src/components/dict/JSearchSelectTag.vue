@@ -14,6 +14,7 @@
     @change="handleAsyncChange"
     allowClear
     :notFoundContent="loading ? undefined : null"
+    :mode="mode"
   >
     <a-spin v-if="loading" slot="notFoundContent" size="small"/>
     <a-select-option v-for="d in options" :key="d.value" :value="d.value">{{ d.text }}</a-select-option>
@@ -31,7 +32,8 @@
     :filterOption="filterOption"
     v-model="selectedValue"
     allowClear
-    :notFoundContent="loading ? undefined : null">
+    :notFoundContent="loading ? undefined : null"
+    :mode="mode">
     <a-spin v-if="loading" slot="notFoundContent" size="small"/>
     <a-select-option v-for="d in options" :key="d.value" :value="d.value">{{ d.text }}</a-select-option>
   </a-select>
@@ -73,6 +75,10 @@
       getPopupContainer: {
         type:Function,
         default: null
+      },
+      mode:{
+        type: String,
+        default: '',
       },
     },
     data(){
@@ -135,16 +141,47 @@
             //update-end-author:taoyan date:20220112 for: 方法initSelectValue 根据下拉框实际值查询下拉框的显示的文本 因后台接口只处理3个参数，所以将过滤条件去掉
             getAction(`/sys/dict/loadDictItem/${itemDictStr}`,{key:this.value}).then(res=>{
               if(res.success){
-                let obj = {
-                  key:this.value,
-                  label:res.result
+                //update-begin---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
+                //判断是否多选
+                if(this.mode === 'multiple'){
+                  if(res.result && res.result.length>0){
+                    let itemArray = [];
+                    let valueArray = this.value.split(",")
+                    for (let i = 0; i < res.result.length; i++) {
+                      itemArray.push({
+                        key:valueArray[i],
+                        label:res.result[i]
+                      })
+                    }
+                    this.selectedAsyncValue = itemArray
+                  }else{
+                    this.selectedAsyncValue = []
+                    this.selectedValue = []
+                  }
+                }else{
+                  let obj = {
+                    key:this.value,
+                    label:res.result
+                  }
+                  this.selectedAsyncValue = {...obj}
                 }
-                this.selectedAsyncValue = {...obj}
+                //update-end---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选--------------
               }
             })
           }
         }else{
-          this.selectedValue = this.value.toString()
+          //update-begin---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
+          //判断是否为多选
+          if(this.mode==='multiple'){
+            if(this.value){
+              this.selectedValue = this.value.split(",");
+            }else{
+              this.selectedValue = []
+            }
+          }else{
+            this.selectedValue = this.value.toString()
+          }
+          //update-end---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
         }
       },
       loadData(value){
@@ -228,7 +265,17 @@
         //update-begin-author:scott date:20201222 for:【搜索】搜索查询组件，删除条件，默认下拉还是上次的缓存数据，不好 JT-191
         if(selectedObj){
           this.selectedAsyncValue = selectedObj
-          this.selectedValue = selectedObj.key
+          //update-begin---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
+          if(this.mode ==='multiple'){
+            let keyArray = []
+            for (let i = 0; i < selectedObj.length; i++) {
+              keyArray.push(selectedObj[i].key)
+            }
+            this.selectedValue = keyArray
+          }else{
+            this.selectedValue = selectedObj.key
+          }
+          //update-end---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
         }else{
           this.selectedAsyncValue = null
           this.selectedValue = null
@@ -239,7 +286,13 @@
         //update-end-author:scott date:20201222 for:【搜索】搜索查询组件，删除条件，默认下拉还是上次的缓存数据，不好 JT-191
       },
       callback(){
-        this.$emit('change', this.selectedValue);
+        //update-begin---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
+        if(this.mode === 'multiple'){
+          this.$emit('change',  this.selectedValue.join(","));
+        }else{
+          this.$emit('change', this.selectedValue);
+        }
+        //update-end---author:wangshuai ---date:20221115  for：[issues/4213]JSearchSelectTag改造支持多选------------
       },
       setCurrentDictOptions(dictOptions){
         this.options = dictOptions
