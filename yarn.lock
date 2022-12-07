@@ -895,10 +895,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@jeecg/antd-online-mini@3.1.0-beta":
-  version "3.1.0-beta"
-  resolved "https://registry.npmmirror.com/@jeecg/antd-online-mini/-/antd-online-mini-3.1.0-beta.tgz#cf3e254259503405a5e83ffa6775ac9fa02fe74c"
-  integrity sha512-pW0zWzExnxjlC3e7DzGYjQibLU22K/7N0kp1ddJrGgX33Ia/wq7ELOcwn6bLzITD89RcvX1JUW/om+IJ1PxOSw==
+"@jeecg/antd-online-mini@3.4.3-beta2":
+  version "3.4.3-beta2"
+  resolved "https://registry.npmmirror.com/@jeecg/antd-online-mini/-/antd-online-mini-3.4.3-beta2.tgz#5903547f48a7d51f2df9773b85d25d28807e57ae"
+  integrity sha512-uZLjtQG/vAcBsCEysE1HceUyzwiHwU+JlNzvHxNnenNDHeaawZa9CfILUImNFJ5JQVqE5J11QpQNb6i5Boo3Gw==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -5849,6 +5849,19 @@ graphlib@^2.1.8:
   dependencies:
     lodash "^4.17.15"
 
+gulp-insert@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.npmmirror.com/gulp-insert/-/gulp-insert-0.5.0.tgz#32313f13e4a23cf5acca5ce5f0c080923c778602"
+  integrity sha512-SDKCWmjomAo0N0Bzj9qEKIfURORJR/72p6AbDBIK9yKZw794ROTrQHliBem+NJzS2GsTWSm8dGWJ5L7KtjnMRA==
+  dependencies:
+    readable-stream "^1.0.26-4"
+    streamqueue "0.0.6"
+
+gulp-rename@^1.2.2:
+  version "1.4.0"
+  resolved "https://registry.npmmirror.com/gulp-rename/-/gulp-rename-1.4.0.tgz#de1c718e7c4095ae861f7296ef4f3248648240bd"
+  integrity sha512-swzbIGb/arEoFK89tPY58vg3Ok1bw+d35PfUNwWqdo7KM4jkmuGA78JiDNqR+JeZFaeeHnRg9N7aihX3YPmsyg==
+
 gzip-size@^5.0.0:
   version "5.1.1"
   resolved "https://registry.npmjs.org/gzip-size/-/gzip-size-5.1.1.tgz#cb9bee692f87c0612b232840a873904e4c135274"
@@ -6802,15 +6815,15 @@ is-wsl@^2.1.1:
   dependencies:
     is-docker "^2.0.0"
 
+isarray@0.0.1, isarray@~0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
-
-isarray@~0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
-  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
 
 isexe@^2.0.0:
   version "2.0.0"
@@ -7384,6 +7397,14 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+lrz@^4.9.41:
+  version "4.9.41"
+  resolved "https://registry.npmmirror.com/lrz/-/lrz-4.9.41.tgz#3d51b13d8dde63775bd8ba3af80d999b603e19ec"
+  integrity sha512-fCRx419zPeNjvZYMHkw0kD93WKpkCRxku+hj6+voItn6Ur6bGqaVa6pPb9C93/vq57cgMGs5R/w8gZj2KuBu3g==
+  dependencies:
+    gulp-insert "^0.5.0"
+    gulp-rename "^1.2.2"
 
 make-dir@^1.0.0:
   version "1.3.0"
@@ -9460,6 +9481,16 @@ read-pkg@^5.0.0:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
+readable-stream@^1.0.26-2, readable-stream@^1.0.26-4:
+  version "1.1.14"
+  resolved "https://registry.npmmirror.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  integrity sha512-+MeVjFf4L44XUkhM1eYbD8fyEsxcV81pqMSR5gblfcLCHfZvbrqy4/qYHE+/R5HoBUT11WV5O08Cr1n3YXkWVQ==
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
+
 readable-stream@^3.0.6, readable-stream@^3.1.1, readable-stream@^3.6.0:
   version "3.6.0"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.0.tgz#337bbda3adc0706bd3e024426a286d4b4b2c9198"
@@ -10499,6 +10530,13 @@ stream-shift@^1.0.0:
   resolved "https://registry.npmjs.org/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
 
+streamqueue@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmmirror.com/streamqueue/-/streamqueue-0.0.6.tgz#66f5f5ec94e9b8af249e4aec2dd1f741bfe94de3"
+  integrity sha512-l09LNfTUkmLMckTB1Mm8Um5GMS1uTZ/KTodg/SMf5Nx758IOsmaqIQ/AJumAnNMkDgZBG39btq3LVkN90knq8w==
+  dependencies:
+    readable-stream "^1.0.26-2"
+
 strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
@@ -10591,6 +10629,11 @@ string_decoder@^1.0.0, string_decoder@^1.1.1:
   integrity sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   dependencies:
     safe-buffer "~5.2.0"
+
+string_decoder@~0.10.x:
+  version "0.10.31"
+  resolved "https://registry.npmmirror.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+  integrity sha512-ev2QzSzWPYmy9GuqfIVildA4OdcGLeFZQrq5ys6RtiuF+RQQiZWr8TZNyAcuVXyQRYfEO+MsoB/1BuQVhOJuoQ==
 
 string_decoder@~1.1.1:
   version "1.1.1"
@@ -11458,6 +11501,13 @@ vue-photo-preview@^1.1.3:
     vue-template-compiler "^2.4.4"
     webpack "^3.6.0"
     webpack-dev-server "^2.9.1"
+
+vue-print-nb-jeecg@^1.0.10:
+  version "1.0.11"
+  resolved "https://registry.npmmirror.com/vue-print-nb-jeecg/-/vue-print-nb-jeecg-1.0.11.tgz#9e925732cbf4b43220bd039bb75cb342719c46b6"
+  integrity sha512-oKmXayXokyvm75p5RM+hJes/6NXsBJyeIx9sFjSKgnRxfyscFraFfAj9byb/sy4/P4Pn9FtawqWc5rkgiKHWVw==
+  dependencies:
+    babel-plugin-transform-runtime "^6.23.0"
 
 vue-ref@^2.0.0:
   version "2.0.0"
