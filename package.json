@@ -46,7 +46,8 @@
     "vxe-table-plugin-antd": "1.8.10",
     "cron-parser": "^2.10.0",
     "qiankun": "^2.5.1",
-    "xss": "^1.0.13"
+    "xss": "^1.0.13",
+    "aframe": "^1.4.0"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.2.5",
