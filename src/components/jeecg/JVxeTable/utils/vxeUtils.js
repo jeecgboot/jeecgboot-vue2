@@ -13,7 +13,9 @@ export function getRefPromise(vm, name) {
   return new Promise((resolve) => {
     (function next() {
       let ref = vm.$refs[name]
-      if (ref) {
+      // 部分组件存在异步方法，新增了一个flag，如果执行完成则将flag置为true
+      // 如果有flag字段，则必须为true，如果没有flag字段则不必判断
+      if (ref && (!ref.hasOwnProperty('renderFinish') || ref.renderFinish) ) {
         resolve(ref)
       } else {
         setTimeout(() => {

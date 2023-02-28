@@ -108,6 +108,8 @@ export default {
       caseId: `_j-vxe-${randomString(8)}_`,
       // 内置columns
       innerColumns: [],
+      // 新增flag：列的字典数据是异步加载的，如果设置了默认子表添加行addDefaultRowNum，列字典还没加载完成时，就会执行，导致出错。如果列数据加载完成，则标记为true
+      renderFinish: false,
       // 内置 EditRules
       innerEditRules: [],
       // 记录滚动条位置
@@ -491,6 +493,7 @@ export default {
 
         this.innerColumns = innerColumns
         this.innerEditRules = innerEditRules
+        this.renderFinish = true
       }
     },
     // watch linkageConfig
