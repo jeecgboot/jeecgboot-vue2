@@ -25,26 +25,36 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 
 ##  项目源码
 
-| 仓库 |前端源码Vue3版 | 前端源码Vue2版 | 后端源码 |
+| 仓库  | 前端源码Vue2版 | 后端源码 |
 |-|-|-|-|
-| Github | [jeecgboot-vue3](https://github.com/jeecgboot/jeecgboot-vue3)  | [ant-design-vue-jeecg](https://github.com/jeecgboot/ant-design-vue-jeecg) | [jeecg-boot](https://gitee.com/jeecg/jeecg-boot/tree/v3.4.3last) |
-| 码云 | [jeecgboot-vue3](https://gitee.com/jeecg/jeecgboot-vue3)  | [ant-design-vue-jeecg](https://gitee.com/jeecg/ant-design-vue-jeecg)  | [jeecg-boot](https://github.com/jeecgboot/jeecg-boot/tree/v3.4.3) |
+| Github   | [ant-design-vue-jeecg](https://github.com/jeecgboot/ant-design-vue-jeecg) | [jeecg-boot](https://gitee.com/jeecg/jeecg-boot/tree/v3.4.3last) |
+| 码云  | [ant-design-vue-jeecg](https://gitee.com/jeecg/ant-design-vue-jeecg)  | [jeecg-boot](https://github.com/jeecgboot/jeecg-boot/tree/v3.4.3) |
 
 
 ##### 项目说明
 
 | 项目名                | 说明                     | 
 |--------------------|------------------------|
-| `jeecgboot-vue3` | Vue3版前端代码 | 
 | `jeecg-boot`    | JAVA后台（支持微服务）        | 
 | `ant-design-vue-jeecg`  |Vue2版前端代码   |   
 
 
 
+#### 项目介绍 
+- 说明：JeecgBoot前端提供两套解决方案，一套VUE2和一套VUE3版本，目前vue2版本最新代码只支持到jeecgboot 3.4.3版本，一定注意。
+
+
+#### Vue2与Vue3版本区别
+> - VUE3版本彻底抛弃IE兼容，不兼容IE和低版本浏览器，只适配高版本谷歌和Edge
+ （政府、事业类单位项目需要谨慎选择——国产化迁移是一个漫长的过程，万一过程中要求IE兼容，这个不可逆）
+> - 所以如果对浏览器有要求的项目，请选择VUE2版本。
+> - VUE3版是全新的技术栈，紧跟主流（前端重写），各个功能都做了优化，拥有更好的体验效果
+
+
 
 #### 前端技术栈
  
-  > 此处是Vue2版的技术栈介绍，[Vue3版技术栈看这里](https://github.com/jeecgboot/jeecgboot-vue3)
+  > 此处是Vue2版的技术栈介绍
 
 - 基础框架：[ant-design-vue](https://github.com/vueComponent/ant-design-vue) - Ant Design Of Vue 实现
 - JavaScript框架：Vue
