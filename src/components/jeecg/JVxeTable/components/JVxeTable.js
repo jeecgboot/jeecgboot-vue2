@@ -390,7 +390,11 @@ export default {
               col[renderName] = renderOptions
               // 处理字典
               if (col.dictCode) {
-                await this._loadDictConcatToOptions(col)
+                try {
+                  await this._loadDictConcatToOptions(col)
+                } catch (e) {
+                  console.log('加载字典失败')
+                }
               }
               // 处理校验
               if (col.validateRules) {
