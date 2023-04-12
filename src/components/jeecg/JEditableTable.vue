@@ -119,7 +119,7 @@
                 v-if="
                 maxHeight == null ||
                 (rowIndex >= parseInt(`${(scrollTop-rowHeight) / rowHeight}`) &&
-                  (parseInt(`${scrollTop / rowHeight}`) + 9) > rowIndex)
+                  (parseInt(`${scrollTop / rowHeight}`) + maxShowLines) > rowIndex)
               "
                 :id="`${caseId}tbody-tr-${rowIndex}`"
                 :data-idx="rowIndex"
@@ -805,6 +805,11 @@
       maxHeight: {
         type: Number,
         default: 400
+      },
+      // 最大显示行数
+      maxShowLines: {
+        type: Number,
+        default: 9
       },
       // 要禁用的行
       disabledRows: {
