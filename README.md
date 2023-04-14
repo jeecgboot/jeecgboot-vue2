@@ -16,12 +16,23 @@ Overview
 ----
 
 基于 [Ant Design of Vue](https://vuecomponent.github.io/ant-design-vue/docs/vue/introduce-cn/) 实现的 Ant Design Pro  Vue 版
-Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码生成器的低代码平台。
-前端页面代码和后端功能代码一键生成，不需要写任何代码，保持jeecg一贯的强大！！
-
-
+Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码生成器的低代码平台。前端页面代码和后端功能代码一键生成，不需要写任何代码，保持jeecg一贯的强大！！
  
 > 强大的代码生成器让前后端代码一键生成! JeecgBoot引领低代码开发模式(OnlineCoding-> 代码生成-> 手工MERGE)， 帮助解决Java项目70%的重复工作，让开发更多关注业务。既能快速提高效率，节省成本，同时又不失灵活性
+
+
+## 项目介绍 
+说明：JeecgBoot前端提供两套解决方案，一套VUE2和一套VUE3版本，目前vue2版本最新代码只支持到jeecgboot 3.4.3版本，一定注意。
+
+
+## Vue2与Vue3版本区别
+> - VUE3版本彻底抛弃IE兼容，不兼容IE和低版本浏览器，只适配高版本谷歌和Edge
+ （政府、事业类单位项目需要谨慎选择——国产化迁移是一个漫长的过程，万一过程中要求IE兼容，这个不可逆）
+> - 所以如果对浏览器有要求的项目，请选择VUE2版本。
+> - VUE3版是全新的技术栈，紧跟主流（前端重写），各个功能都做了优化，拥有更好的体验效果
+
+
+
 
 ##  项目源码
 
@@ -31,7 +42,7 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 | 码云  | [ant-design-vue-jeecg](https://gitee.com/jeecg/ant-design-vue-jeecg)  | [jeecg-boot](https://github.com/jeecgboot/jeecg-boot/tree/v3.4.3) |
 
 
-##### 项目说明
+## 项目说明
 
 | 项目名                | 说明                     | 
 |--------------------|------------------------|
@@ -39,8 +50,8 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 | `ant-design-vue-jeecg`  |Vue2版前端代码   |   
 
 
-技术支持
-----
+## 技术支持
+
 
 本项目关闭issue，使用中遇到问题或者BUG可以在 [JeecgBoot主项目上提Issues](https://github.com/jeecgboot/jeecg-boot/issues/new)
 
@@ -49,19 +60,9 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 技术文档： http://doc.jeecg.com
 
 
-#### 项目介绍 
-- 说明：JeecgBoot前端提供两套解决方案，一套VUE2和一套VUE3版本，目前vue2版本最新代码只支持到jeecgboot 3.4.3版本，一定注意。
 
 
-#### Vue2与Vue3版本区别
-> - VUE3版本彻底抛弃IE兼容，不兼容IE和低版本浏览器，只适配高版本谷歌和Edge
- （政府、事业类单位项目需要谨慎选择——国产化迁移是一个漫长的过程，万一过程中要求IE兼容，这个不可逆）
-> - 所以如果对浏览器有要求的项目，请选择VUE2版本。
-> - VUE3版是全新的技术栈，紧跟主流（前端重写），各个功能都做了优化，拥有更好的体验效果
-
-
-
-#### 前端技术栈
+## 前端技术栈
  
   > 此处是Vue2版的技术栈介绍
 
@@ -83,8 +84,8 @@ Jeecg-boot 的前端UI框架，采用前后端分离方案，提供强大代码�
 
 
 
-项目下载和运行
-----
+## 项目下载和运行
+
 
 - 拉取项目代码
 ```bash
