@@ -175,7 +175,7 @@ Docker镜像启动前端（单体模式）
 
 - [Vue](https://cn.vuejs.org/v2/guide)
 
-- [路由/菜单说明](https://github.com/zhangdaiscott/jeecg-boot/tree/master/ant-design-vue-jeecg/src/router/README.md)
+- [路由/菜单说明](https://github.com/jeecgboot/ant-design-vue-jeecg/blob/master/src/router/README.md)
 
 - [ANTD 默认配置项](https://github.com/zhangdaiscott/jeecg-boot/tree/master/ant-design-vue-jeecg/src/defaultSettings.js)
 
