@@ -8,6 +8,7 @@ import { deleteAction, getAction,downFile,getFileAccessHttpUrl } from '@/api/man
 import Vue from 'vue'
 import { ACCESS_TOKEN, TENANT_ID } from "@/store/mutation-types"
 import store from '@/store'
+import { mapState } from 'vuex'
 
 export const JeecgListMixin = {
   data(){
@@ -68,7 +69,10 @@ export const JeecgListMixin = {
         head['tenant-id'] = tenantid
       }
       return head;
-    }
+    },
+    ...mapState({
+      'device': state => state.app.device,
+    })
   },
   methods:{
     loadData(arg) {
@@ -369,6 +373,30 @@ export const JeecgListMixin = {
       let url = getFileAccessHttpUrl(text)
       window.open(url);
     },
+  },
+  watch: {
+    device: {
+      immediate: true,
+      handler(val) {
+        const isMobile = val === 'mobile'
+
+        // 判断是否有值
+        if (typeof this.columns !== "undefined" && typeof this.columns[Symbol.iterator] === "function") {
+          for (const valKey in this.columns) {
+            if (isMobile && typeof this.columns[valKey].fixed === "string") {
+              // 如果是手机端，并且已设置为固定['left','right']，则缓存其固定状态，以便切换回电脑端时，恢复其固定状态。
+              // 并将fixed设置为false
+              this.$set(this.columns[valKey], 'fixedCache', this.columns[valKey].fixed);
+              this.$set(this.columns[valKey], 'fixed', false);
+            } else if (!isMobile && typeof this.columns[valKey].fixedCache === "string") {
+              // 如果切换回电脑端，并且缓存中有值，则从缓存中取出固定状态
+              this.$set(this.columns[valKey], 'fixed', this.columns[valKey].fixedCache);
+            }
+          }
+        }
+      }
+    }
   }
+
 
 }

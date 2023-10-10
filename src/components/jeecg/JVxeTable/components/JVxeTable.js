@@ -14,6 +14,7 @@ import JVxePagination from './JVxePagination'
 import { cloneObject, getVmParentByName, pushIfNotExist, randomString, simpleDebounce } from '@/utils/util'
 import { UtilTools } from 'vxe-table/packages/tools/src/utils'
 import { getNoAuthCols } from '@/utils/authFilter'
+import { mapState } from 'vuex'
 
 export default {
   name: 'JVxeTable',
@@ -163,6 +164,8 @@ export default {
 
     // vxe 最终 columns
     vxeColumns() {
+      const isMobile = this.device === 'mobile'
+
       this.innerColumns.forEach(column => {
         let renderOptions = {
           caseId: this.caseId,
@@ -173,6 +176,17 @@ export default {
           reloadEffectRowKeysMap: this.reloadEffectRowKeysMap,
           listeners: this.cellListeners,
         }
+
+        if (isMobile && typeof column.fixed === "string") {
+          // 如果是手机端，并且已设置为固定['left','right']，则缓存其固定状态，以便切换回电脑端时，恢复其固定状态。
+          // 并将fixed设置为false
+          column.fixedCache = column.fixed
+          column.fixed = false
+        } else if (!isMobile && typeof column.fixedCache === "string") {
+          // 如果切换回电脑端，并且缓存中有值，则从缓存中取出固定状态
+          column.fixed = column.fixedCache
+        }
+
         if (column.$type === JVXETypes.rowDragSort) {
           renderOptions.dragSortKey = this.dragSortKey
         }
@@ -288,6 +302,9 @@ export default {
         rowInsertDown: rowIndex => this.insertRows({}, rowIndex + 1),
       }
     },
+    ...mapState({
+      'device': state => state.app.device,
+    }),
   },
   watch: {
     dataSource: {
@@ -794,7 +811,7 @@ export default {
           }
         })
       })
-      // 【issues/3828】数据更新后，重新计算统计列 
+      // 【issues/3828】数据更新后，重新计算统计列
       if (updated && this.statistics.has) {
         this.$nextTick(async () => {
           let {xTable} = this.$refs.vxe.$refs;
