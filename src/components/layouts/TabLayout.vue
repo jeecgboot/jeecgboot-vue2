@@ -21,10 +21,10 @@
     <div style="margin: 12px 12px 0;">
       <!-- update-begin-author:taoyan date:20201221 for:此处删掉transition标签 不知道为什么加上后 页面路由切换的时候即1及菜单切到2及菜单的时候 两个菜单页面会同时出现300-500秒左右 -->
       <keep-alive v-if="multipage">
-        <router-view v-if="reloadFlag"/>
+        <router-view v-if="reloadFlag" :key="$router.currentRoute.fullPath"/>
       </keep-alive>
       <template v-else>
-        <router-view v-if="reloadFlag"/>
+        <router-view v-if="reloadFlag" :key="$router.currentRoute.fullPath"/>
       </template>
       <!-- update-end-author:taoyan date:20201221 for:此处删掉transition标签 不知道为什么加上后 页面路由切换的时候即1及菜单切到2及菜单的时候 两个菜单页面会同时出现300-500秒左右 -->
     </div>
