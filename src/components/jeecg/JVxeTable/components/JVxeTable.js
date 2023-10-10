@@ -108,6 +108,8 @@ export default {
       caseId: `_j-vxe-${randomString(8)}_`,
       // 内置columns
       innerColumns: [],
+      // 新增flag：列的字典数据是异步加载的，如果设置了默认子表添加行addDefaultRowNum，列字典还没加载完成时，就会执行，导致出错。如果列数据加载完成，则标记为true
+      renderFinish: false,
       // 内置 EditRules
       innerEditRules: [],
       // 记录滚动条位置
@@ -338,7 +340,7 @@ export default {
     },
     columns: {
       immediate: true,
-      handler(columns) {
+      async handler(columns) {
         //获取不需要显示列
         this.loadExcludeCode()
         let innerColumns = []
@@ -351,9 +353,9 @@ export default {
           this.statistics.average = []
 
           // 处理成vxe可识别的columns
-          columns.forEach(column => {
+          for (const column of columns) {
             if(this.excludeCode.indexOf(column.key)>=0){
-              return false
+              continue
             }
             let col = {...column}
             let {type} = col
@@ -388,7 +390,11 @@ export default {
               col[renderName] = renderOptions
               // 处理字典
               if (col.dictCode) {
-                this._loadDictConcatToOptions(col)
+                try {
+                  await this._loadDictConcatToOptions(col)
+                } catch (e) {
+                  console.log('加载字典失败')
+                }
               }
               // 处理校验
               if (col.validateRules) {
@@ -437,7 +443,7 @@ export default {
               }
               innerColumns.push(col)
             }
-          })
+          }
         }
         // 判断是否开启了序号
         if (rowNumber) {
@@ -491,6 +497,7 @@ export default {
 
         this.innerColumns = innerColumns
         this.innerEditRules = innerEditRules
+        this.renderFinish = true
       }
     },
     // watch linkageConfig
@@ -794,7 +801,7 @@ export default {
           }
         })
       })
-      // 【issues/3828】数据更新后，重新计算统计列 
+      // 【issues/3828】数据更新后，重新计算统计列
       if (updated && this.statistics.has) {
         this.$nextTick(async () => {
           let {xTable} = this.$refs.vxe.$refs;
@@ -1061,21 +1068,25 @@ export default {
     },
 
     /** 加载数据字典并合并到 options */
-    _loadDictConcatToOptions(column) {
-      initDictOptions(column.dictCode).then((res) => {
-        if (res.success) {
-          let newOptions = (column.options || [])// .concat(res.result)
-          res.result.forEach(item => {
-            // 过滤重复数据
-            for (let option of newOptions) if (option.value === item.value) return
-            newOptions.push(item)
-          })
-          this.$set(column, 'options', newOptions)
-        } else {
-          console.group(`JVxeTable 查询字典(${column.dictCode})发生异常`)
-          console.warn(res.message)
-          console.groupEnd()
-        }
+    async _loadDictConcatToOptions(column) {
+      return new Promise((resolve, reject) => {
+        initDictOptions(column.dictCode).then((res) => {
+          if (res.success) {
+            let newOptions = (column.options || [])// .concat(res.result)
+            res.result.forEach(item => {
+              // 过滤重复数据
+              for (let option of newOptions) if (option.value === item.value) return
+              newOptions.push(item)
+            })
+            this.$set(column, 'options', newOptions)
+            resolve()
+          } else {
+            console.group(`JVxeTable 查询字典(${column.dictCode})发生异常`)
+            console.warn(res.message)
+            console.groupEnd()
+            reject()
+          }
+        })
       })
     },
     //options自定义赋值 刷新
