@@ -1,21 +1,17 @@
-.DS_Store
 node_modules
-/dist
+.DS_Store
+dist
+.npmrc
+.cache
 
-# local env files
-.env.local
-.env.*.local
+## ide
+**/.idea
+*.iml
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+## backend
+**/target
+**/logs
+**/dist
 
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw*
+## front
+/yarn-error.log

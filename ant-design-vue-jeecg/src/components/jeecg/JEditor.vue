@@ -163,7 +163,14 @@
         }else{
           this.$emit('input', newValue)
         }
+      },
+      //update--begin--autor:liusq-----date:20230420------for：[issues/19]缓存路由后，页面中富文本组件会出现无法编辑的问题------
+      '$route': function(newRoute) {
+        if(this.$route.meta.keepAlive && this.$route.meta.componentName){
+          this.reload()
+        }
       }
+      //update--end--autor:liusq-----date:20230420------for：[issues/19]缓存路由后，页面中富文本组件会出现无法编辑的问题------
     }
   }
 

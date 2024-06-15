@@ -236,7 +236,7 @@
       },
       add () {
         //初始化默认值
-        this.edit({status:'1', permsType:'1', sortNo:1.0, route:true, menuType:0 });
+        this.edit({status:'1', permsType:'1', sortNo:1.0, route:true, menuType:0,component:'layouts/RouteView' });
       },
       edit (record) {
         this.resetScreenSize(); // 调用此方法,根据屏幕宽度自适应调整抽屉的宽度
@@ -329,6 +329,15 @@
           this.show = true;
           this.menuLabel = '菜单名称';
         }
+
+        //update-begin---author:wangshuai ---date:20220729  for：[VUEN-1834]只有一级菜单，才默认值，子菜单的时候，清空------------
+        if(!this.model.id){
+          if(this.model.menuType === 1 && this.model.component === 'layouts/RouteView'){
+            this.model.component = ""
+          }
+        }
+        //update-end---author:wangshuai ---date:20220729  for：[VUEN-1834]只有一级菜单，才默认值，子菜单的时候，清空--------------
+
         this.$nextTick(() => {
           this.$refs.form.validateField(['url','component']);
         });

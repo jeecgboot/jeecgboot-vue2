@@ -48,7 +48,7 @@ export function filterDictText(dictOptions, text) {
     for (let txt of splitText) {
       let dictText = txt
       for (let dictItem of dictOptions) {
-        if (txt.toString() === dictItem.value.toString()) {
+        if (dictItem.value && txt.toString() === dictItem.value.toString()) {
           dictText = (dictItem.text || dictItem.title || dictItem.label)
           break
         }

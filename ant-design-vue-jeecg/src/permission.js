@@ -13,6 +13,16 @@ const whiteList = ['/user/login', '/user/register', '/user/register-result','/us
 whiteList.push(OAUTH2_LOGIN_PAGE_PATH)
 
 router.beforeEach((to, from, next) => {
+  //update-begin---author:scott ---date:2022-10-13  for：[jeecg-boot/issues/4091]多级路由缓存问题 #4091-----------
+  //解决三级菜单无法缓存问题
+  //参考： https://blog.csdn.net/qq_37322135/article/details/126013301
+  //参考： https://blog.csdn.net/cwin8951/article/details/106644118
+  if (to.matched && to.matched.length>3) {
+    to.matched.splice(2, to.matched.length - 3)
+  }
+  //update-end---author:scott ---date::2022-10-13  for：[jeecg-boot/issues/4091]多级路由缓存问题 #4091--------------
+  
+  
   NProgress.start() // start progress bar
 
   if (Vue.ls.get(ACCESS_TOKEN)) {

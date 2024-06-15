@@ -191,7 +191,8 @@
 <style lang="less">
   body {
     // 打开滚动条固定显示
-    overflow-y: scroll;
+    // 注释原因：issues/I5VK11
+    //overflow-y: scroll;
 
     &.colorWeak {
       filter: invert(80%);

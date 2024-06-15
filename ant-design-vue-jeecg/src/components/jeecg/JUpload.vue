@@ -446,6 +446,15 @@
       display: none;
     }
   }
+  /*update-begin-author:taoyan date:2022-12-5 for: issues/4250 建议JUpload组件，disabled为true的时候上传button能够变灰或者其他样式图案，便于知晓无法再点击上传*/
+  .ant-btn, .ant-upload-disabled{
+    cursor: not-allowed;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+  }
+  /*update-end-author:taoyan date:2022-12-5 for: issues/4250 建议JUpload组件，disabled为true的时候上传button能够变灰或者其他样式图案，便于知晓无法再点击上传*/
+
 }
   //---------------------------- begin 图片左右换位置 -------------------------------------
   .uploadty-mover-mask{

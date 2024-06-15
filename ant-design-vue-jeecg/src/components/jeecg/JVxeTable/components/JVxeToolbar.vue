@@ -55,7 +55,8 @@
       },
 
       btns() {
-        let arr = this.toolbarConfig.btn || ['add', 'remove', 'clearSelection']
+        let {btn, btns} = this.toolbarConfig
+        let arr = btn || btns || ['add', 'remove', 'clearSelection']
         let exclude = [...this.excludeCode]
         // TODO 需要将remove替换batch_delete
         // 系统默认的批量删除编码配置为 batch_delete 此处需要转化一下
