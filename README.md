@@ -39,12 +39,6 @@ JeecgBoot 提供了一系列`低代码模块`，实现在线开发`真正的零�
 `JEECG业务流程:` 采用工作流来实现、扩展出任务接口，供开发编写业务逻辑，表单提供多种解决方案： 表单设计器、online配置表单、编码表单。同时实现了流程与表单的分离设计（松耦合）、并支持任务节点灵活配置，既保证了公司流程的保密性，又减少了开发人员的工作量。
 
 
-项目源码
------------------------------------
-| 仓库 |前端源码Vue3版 | 前端源码Vue2版 | 后端源码 |
-|-|-|-|-|
-| Github | [jeecgboot-vue3](https://github.com/jeecgboot/jeecgboot-vue3)  | [ant-design-vue-jeecg](https://github.com/jeecgboot/jeecg-boot/tree/master/ant-design-vue-jeecg) | [jeecg-boot](https://github.com/jeecgboot/jeecg-boot) |
-| 码云 | [jeecgboot-vue3](https://gitee.com/jeecg/jeecgboot-vue3)  | [ant-design-vue-jeecg](https://gitee.com/jeecg/jeecg-boot/tree/master/ant-design-vue-jeecg)  | [jeecg-boot](https://gitee.com/jeecg/jeecg-boot) |
 
 
 ##### 项目说明
@@ -53,7 +47,6 @@ JeecgBoot 提供了一系列`低代码模块`，实现在线开发`真正的零�
 |--------------------|------------------------|
 | `jeecg-boot`    | SpringBoot后台源码（支持微服务）        |
 | `ant-design-vue-jeecg`  |Vue2版前端源码（与主项目一起）       |
-| `jeecgboot-vue3` | Vue3版前端源码 |
 | `jeecg-boot-starter` | stater依赖项目单独维护，[源码地址](https://gitee.com/jeecg/jeecg-boot-starter) |
 
 
@@ -70,7 +63,7 @@ Jeecg-Boot低代码开发平台，可以应用在任何J2EE项目的开发中，
 
 - 在线演示 ： [Vue2版本](http://boot.jeecg.com) |  [Vue3版本](http://boot3.jeecg.com)
 
-- 开发文档：  [主项目文档](http://doc.jeecg.com) | [Vue3文档](http://vue3.jeecg.com)
+- 开发文档：  [Vue2版文档](http://doc.jeecg.com)
 
 - 新手指南： [快速入门](http://www.jeecg.com/doc/quickstart)  |  [视频教程](https://space.bilibili.com/454617261/channel/series) |   [常见问题 ](http://www.jeecg.com/doc/qa)  |   [技术支持](http://jeecg.com/doc/help) |  [1分钟体验低代码](https://my.oschina.net/jeecg/blog/3083313)
 
@@ -84,7 +77,7 @@ Docker启动项目
 -----------------------------------
 - [Docker镜像单体启动项目](http://doc.jeecg.com/2043889)
 - [Docker镜像微服务启动项目](http://doc.jeecg.com/3040737)
-- [jeecgboot-vue3 Docker启动](http://vue3.jeecg.com/3028878)
+
 
 为什么选择JEECG-BOOT?
 -----------------------------------
@@ -173,7 +166,6 @@ Docker启动项目
 
 #### 前端
  
- > 此处是Vue2的技术栈介绍，[Vue3版技术栈看这里](https://github.com/jeecgboot/jeecgboot-vue3)
 
 - [Vue 2.6.10](https://cn.vuejs.org/),[Vuex](https://vuex.vuejs.org/zh/),[Vue Router](https://router.vuejs.org/zh/)
 - [Axios](https://github.com/axios/axios)
