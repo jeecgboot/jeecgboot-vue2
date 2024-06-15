@@ -10,9 +10,7 @@ JEECG BOOT 低代码开发平台（前后端分离版本）
 当前最新版本： 3.4.0（发布日期：2022-08-06） 
 
 
-> **重大升级说明**
->  - 升级[Spring Cloud Alibaba 2021.0.1.0](https://github.com/alibaba/spring-cloud-alibaba/blob/2021.x/spring-cloud-alibaba-docs/src/main/asciidoc-zh/sca-upgrade-guide.adoc)，使用 spring.config.import 方式引入nacos配置
->  - 拆分jeecg-boot-starter出来，使用独立项目维护 [jeecg-boot-starter项目新地址](https://gitee.com/jeecg/jeecg-boot-starter)
+> **停更说明：vue2版本不再更新，建议使用 [Vue3最新版本](https://github.com/jeecgboot/jeecg-boot)**
 
 
 [![AUR](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/zhangdaiscott/jeecg-boot/blob/master/LICENSE)
