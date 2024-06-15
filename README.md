@@ -7,7 +7,7 @@
 JEECG BOOT 低代码开发平台（前后端分离版本）
 ===============
 
-当前最新版本： 3.4.0（发布日期：2022-08-06） 
+当前最新版本： 3.4.3（发布日期：2022-10-31） 
 
 
 > **停更说明：vue2版本不再更新，建议使用 [Vue3最新版本](https://github.com/jeecgboot/jeecg-boot)**
@@ -15,8 +15,8 @@ JEECG BOOT 低代码开发平台（前后端分离版本）
 
 [![AUR](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg)](https://github.com/zhangdaiscott/jeecg-boot/blob/master/LICENSE)
 [![](https://img.shields.io/badge/Author-北京国炬软件-orange.svg)](http://www.jeecg.com)
-[![](https://img.shields.io/badge/Blog-官方博客-blue.svg)](https://my.oschina.net/jeecg)
-[![](https://img.shields.io/badge/version-3.4.0-brightgreen.svg)](https://github.com/zhangdaiscott/jeecg-boot)
+[![](https://img.shields.io/badge/Blog-官方博客-blue.svg)](https://jeecg.blog.csdn.net)
+[![](https://img.shields.io/badge/version-3.4.3-brightgreen.svg)](https://github.com/zhangdaiscott/jeecg-boot)
 [![GitHub stars](https://img.shields.io/github/stars/zhangdaiscott/jeecg-boot.svg?style=social&label=Stars)](https://github.com/zhangdaiscott/jeecg-boot)
 [![GitHub forks](https://img.shields.io/github/forks/zhangdaiscott/jeecg-boot.svg?style=social&label=Fork)](https://github.com/zhangdaiscott/jeecg-boot)
 
@@ -44,13 +44,24 @@ JeecgBoot 提供了一系列`低代码模块`，实现在线开发`真正的零�
 | 项目名                | 说明                     | 
 |--------------------|------------------------|
 | `jeecg-boot`    | SpringBoot后台源码（支持微服务）        |
-| `ant-design-vue-jeecg`  |Vue2版前端源码（与主项目一起）       |
-| `jeecg-boot-starter` | stater依赖项目单独维护，[源码地址](https://gitee.com/jeecg/jeecg-boot-starter) |
+| `ant-design-vue-jeecg`  |Vue2版 前端源码     |
+| `jeecg-uniapp` | APP开发框架，一份代码多终端适配，同时支持APP、小程序、H5 |
+| `jeecg-boot-starter` | [Stater依赖项目单独维护，点击下载](https://gitee.com/jeecg/jeecg-boot-starter) |
+
+
+
 
 
 适用项目
 -----------------------------------
 Jeecg-Boot低代码开发平台，可以应用在任何J2EE项目的开发中，尤其适合SAAS项目、企业信息管理系统（MIS）、内部办公系统（OA）、企业资源计划系统（ERP）、客户关系管理系统（CRM）等，其半智能手工Merge的开发方式，可以显著提高开发效率70%以上，极大降低开发成本。
+
+
+Docker启动项目
+-----------------------------------
+
+- [Docker启动微服务后台](http://doc.jeecg.com/3043472)
+- [Docker启动Vue2前端](http://doc.jeecg.com/3043612)
 
 
 
@@ -65,19 +76,21 @@ Jeecg-Boot低代码开发平台，可以应用在任何J2EE项目的开发中，
 
 - 新手指南： [快速入门](http://www.jeecg.com/doc/quickstart)  |  [视频教程](https://space.bilibili.com/454617261/channel/series) |   [常见问题 ](http://www.jeecg.com/doc/qa)  |   [技术支持](http://jeecg.com/doc/help) |  [1分钟体验低代码](https://my.oschina.net/jeecg/blog/3083313)
 
-- 微服务开发：  [单体升级为微服务](http://doc.jeecg.com/3040735)
+- 微服务开发：  [单体升级为微服务](http://doc.jeecg.com/3043471)
 
 - QQ交流群 ： ⑥730954414、VUE3群683903138、⑤860162132(满)、④774126647(满)、③816531124(满)、②769925425(满)、①284271917(满)
 > ` 提醒：【QQ群是自助服务群，建议给帮助您解决问题的同学发送指定红包，表示感谢！】 `
 
 
-Docker启动项目
------------------------------------
-- [Docker镜像单体启动项目](http://doc.jeecg.com/2043889)
-- [Docker镜像微服务启动项目](http://doc.jeecg.com/3040737)
 
 
-为什么选择JEECG-BOOT?
+##### Star走势图
+
+[![Star History Chart](https://api.star-history.com/svg?repos=jeecgboot/jeecg-boot&type=Date)](https://star-history.com/#jeecgboot/jeecg-boot)
+
+
+
+为什么选择JeecgBoot?
 -----------------------------------
 * 1.采用最新主流前后分离框架（Springboot+Mybatis+antd），容易上手; 代码生成器依赖性低,灵活的扩展能力，可快速实现二次开发;
 * 2.支持微服务SpringCloud Alibaba(Nacos、Gateway、Sentinel、Skywalking)，提供切换机制支持单体和微服务自由切换
@@ -208,7 +221,7 @@ Docker启动项目
 
 8、服务监控 SpringBootAdmin√
 
-9、链路跟踪 Skywalking   [参考文档](https://www.kancloud.cn/zhangdaiscott/jeecgcloud/1771670)
+9、链路跟踪 Skywalking   [参考文档](http://doc.jeecg.com/2350293)
 
 10、消息中间件 RabbitMQ  √
 
