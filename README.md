@@ -69,6 +69,8 @@ Docker启动项目
 
 - 在线演示 ： [VUE3版演示](http://boot3.jeecg.com) |  [APP演示](http://app.jeecg.com) 
 
+> 演示系统的登录账号密码，请点击 [获取账号密码](http://jeecg.com/doc/demo) 获取 
+
 - 开发文档：  [Vue2版文档](http://doc.jeecg.com)
 
 - 新手指南： [快速入门](http://www.jeecg.com/doc/quickstart)  |  [视频教程](https://space.bilibili.com/454617261/channel/series) |   [常见问题 ](http://www.jeecg.com/doc/qa)  |   [技术支持](http://jeecg.com/doc/help) |  [1分钟体验低代码](https://my.oschina.net/jeecg/blog/3083313)
