@@ -67,7 +67,7 @@ Docker启动项目
 
 - 技术官网：  [http://www.jeecg.com](http://www.jeecg.com)
 
-- 在线演示 ： [Vue2版本](http://boot.jeecg.com) |  [Vue3版本](http://boot3.jeecg.com)
+- 在线演示 ： [VUE3版演示](http://boot3.jeecg.com) |  [APP演示](http://app.jeecg.com) 
 
 - 开发文档：  [Vue2版文档](http://doc.jeecg.com)
 
